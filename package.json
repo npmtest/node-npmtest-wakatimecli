@@ -1,1 +1,40 @@
-{     "devDependencies": {         "wakatimecli": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-wakatimecli",     "homepage": "https://github.com/npmtest/node-npmtest-wakatimecli",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-wakatimecli.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [wakatimecli (v0.1.9)](https://github.com/JoshLankford/WakaTimeCLI#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-wakatimecli.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-wakatimecli) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-wakatimecli.svg)](https://travis-ci.org/npmtest/node-npmtest-wakatimecli)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha",
+        "wakatimecli": "*"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-wakatimecli",
+    "keywords": [
+        "coverage",
+        "test",
+        "wakatimecli"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_wakatimecli.js",
+    "name": "npmtest-wakatimecli",
+    "nameAlias": "npmtest_wakatimecli",
+    "nameOriginal": "npmtest-wakatimecli",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-wakatimecli.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
